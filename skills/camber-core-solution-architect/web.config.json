@@ -1,0 +1,9 @@
+{
+  "webName": "camber-core-solution-architect",
+  "exclude": [
+    "reference/discover.md",
+    "reference/propose.md",
+    "reference/design.md"
+  ],
+  "rename": {}
+}
