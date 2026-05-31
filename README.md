@@ -1,16 +1,15 @@
 # Camber Qualify
 
-A public skill that turns your own AI assistant into a **Camber Core Solution Architect**.
-Point your AI at this repo, tell it about your company, and it will research you, find
-where managed AI infrastructure would have the biggest impact, and design a concrete
-deployment — with diagrams, in a working session, no sales call required.
+A public skill that turns your own AI assistant into a **Camber Core Fit Guide**.
+Tell your AI about yourself and your company, and it will research you, ask good questions,
+and help you reach a clear answer — does Camber Core fit your business or not.
+No pitch. No jargon. No sales call required.
 
 Built by [Inform Growth](https://informgrowth.com). **License:** Apache-2.0 — read it,
 fork it, run it.
 
-> **Camber Core** is managed AI infrastructure that unifies AI tooling across tools,
-> teams, and entities. One isolated deployment per entity, principal-level access across
-> all of them, institutional knowledge captured as skills, kept fit by a managed service.
+> **Camber Core** is managed AI infrastructure. Control what your AI does. See how it
+> is used. Own what it learns — across every entity you operate.
 > Learn more at [informgrowth.com](https://informgrowth.com).
 
 ---
@@ -21,27 +20,22 @@ Copy this, fill in the **[bracketed]** parts, and paste it into any AI assistant
 web access (Claude, ChatGPT, Cursor, …):
 
 ```text
-Act as a Camber Core Solution Architect for [Company]. You are an experienced solution
-architect for Inform Growth's Camber Core — managed AI infrastructure that unifies AI
-tooling across tools, teams, and entities. Your goal is to identify the highest-impact
-opportunities Camber Core could have for our business, and then design and sequence
-them. Go deep — do not stay at a general level.
+I want to figure out whether Camber Core — managed AI infrastructure from Inform Growth
+— is the right fit for my business. Give me an honest answer, not a pitch. Use plain
+language. Ask me good questions. Help me see clearly.
 
-First, read the Solution Architect skill to understand your role:
+Read your instructions here first:
 https://github.com/Inform-Growth/camber-qualify/blob/main/skills/camber-core-solution-architect/SKILL.web.md
 
-I am [Name], [Role] at [Company] ([company website]). Evaluate for: [departments/areas,
-e.g. operations, marketing].
+I am [Name], [Role] at [Company] ([company website]).
 
-Then research my company from our website and other public sources before proposing
-anything — understand who we are, our size, our structure, our tools, and what we likely
-do by hand today. This is a conversation: at each step share your hypotheses in tables,
-illustrate architectures and workflows with Mermaid diagrams, and ask me where you might
-be wrong using numbered options before moving on.
+Start by researching my company from our website and any public sources you can find.
+Then open with a plain-language summary of what you found and ask if you have got it
+right. From there, ask me what you need to know to give me an honest read.
 ```
 
-That's it. The AI will run a discovery → propose → design → fit session and end with a
-concrete next step.
+That is it. The AI researches your company, calibrates to how you talk, asks targeted
+questions, and drives to a clear verdict — fit, no fit, or fit with conditions.
 
 ---
 
@@ -56,17 +50,16 @@ git clone https://github.com/Inform-Growth/camber-qualify.git
 cp -r camber-qualify/skills/camber-core-solution-architect ~/.claude/skills/
 ```
 
-Then just say: *"Act as a Camber Core Solution Architect for my company, [website]."*
+Then say: *"Help me figure out if Camber Core fits my business. I am [name], [role] at [company website]."*
 
 ### 2. ChatGPT / Cursor / any web-enabled AI (paste the prompt)
 
-Use the **master prompt** above. The AI fetches the skill and reference docs by URL.
+Use the **master prompt** above. The AI fetches the skill instructions by URL.
 
 ### 3. Read it on GitHub
 
 Prefer to read first? Browse [`skills/camber-core-solution-architect/`](./skills/camber-core-solution-architect/)
-— the [`SKILL.md`](./skills/camber-core-solution-architect/SKILL.md) and the
-[`reference/`](./skills/camber-core-solution-architect/reference/) docs are the whole kit.
+— the [`SKILL.web.md`](./skills/camber-core-solution-architect/SKILL.web.md) is the whole playbook.
 
 ---
 
@@ -79,27 +72,25 @@ camber-qualify/
 ├── docs/                             # the design spec for this kit
 └── skills/
     └── camber-core-solution-architect/
-        ├── SKILL.md                  # full skill — persona, actions, guardrails
-        ├── SKILL.web.md              # lighter variant for web-fetch / pasted prompts
+        ├── SKILL.md                  # full skill for Claude Code / Claude Desktop
+        ├── SKILL.web.md              # web-fetch variant — what the master prompt loads
         ├── web.config.json           # web-build config
         └── reference/
-            ├── camber-core.md        # what Camber Core is (safe-altitude source of truth)
-            ├── who-its-for.md        # ICP segments + "is this you" diagnostics
-            ├── what-we-refuse.md     # the five commitments / red lines
+            ├── camber-core.md        # what Camber Core is
+            ├── who-its-for.md        # ICP segments and fit signals
+            ├── what-we-refuse.md     # the five commitments
             ├── tradeoffs.md          # what Camber Core is bad at
             ├── case-studies.md       # anonymized proof
-            ├── manifesto-public.md   # the thesis, for outside readers
-            ├── discover.md           # DISCOVER action framework
-            ├── propose.md            # PROPOSE action framework
-            └── design.md             # DESIGN action framework
+            └── manifesto-public.md   # the thesis, for outside readers
 ```
 
 ## How the skill works
 
-It loads the persona, then runs four non-sequential actions — **DISCOVER** (research you
-first), **PROPOSE** (opportunity tables + a differentiation test), **DESIGN** (concrete
-deployments with Mermaid diagrams + a roadmap), and **FIT** (an honest read and a routed
-next step). It's built to be candid: if Camber Core isn't right for you, it says so.
+The guide researches your company first, then calibrates to your language and title.
+It asks one question at a time, names your pain back to you in your own words, and
+uses a plain-language metaphor to show what your operation looks like with and without
+Camber Core. It ends with an honest verdict — strong fit, not a fit, or fit with
+conditions — and a clear next step either way.
 
 ## Talk to a human
 
